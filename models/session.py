@@ -20,6 +20,7 @@ class Session(models.Model):
     )
     instructor_id = fields.Many2one(
         comodel_name='res.partner',
+        domain=[('instructor', '=', True)],
         string='Instructor',
     )
     course_id = fields.Many2one(
