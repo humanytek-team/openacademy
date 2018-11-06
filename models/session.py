@@ -10,6 +10,7 @@ class Session(models.Model):
         required=True,
     )
     start_date = fields.Date(
+        default=fields.Date.today,
     )
     duration = fields.Float(
         digits=(6, 2),
@@ -36,6 +37,9 @@ class Session(models.Model):
     attendee_ids = fields.Many2many(
         comodel_name='res.partner',
         string='Attendees',
+    )
+    active = fields.Boolean(
+        default=True,
     )
 
     taken_seats = fields.Float(string="Taken seats", compute='_taken_seats')
