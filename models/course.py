@@ -18,3 +18,8 @@ class Course(models.Model):
         string='Responsible',
         index=True,
     )
+    session_ids = fields.One2many(
+        comodel_name='openacademy.session',
+        inverse_name='course_id',
+        string='Sessions',
+    )
