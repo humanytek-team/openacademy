@@ -9,5 +9,6 @@
     ],
     'data': [
         'views/course.xml',
+        'views/session.xml',
     ],
 }
