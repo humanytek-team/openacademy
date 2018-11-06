@@ -9,6 +9,7 @@
     ],
     'data': [
         'views/course.xml',
+        'views/partner.xml',
         'views/session.xml',
     ],
 }
