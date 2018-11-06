@@ -8,5 +8,6 @@
     'depends': [
     ],
     'data': [
+        'views/course.xml',
     ],
 }
