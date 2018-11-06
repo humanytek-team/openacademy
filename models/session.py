@@ -20,7 +20,11 @@ class Session(models.Model):
     )
     instructor_id = fields.Many2one(
         comodel_name='res.partner',
-        domain=[('instructor', '=', True)],
+        domain=[
+            '|',
+            ('instructor', '=', True),
+            ('category_id.name', 'ilike', "Teacher"),
+        ],
         string='Instructor',
     )
     course_id = fields.Many2one(
