@@ -28,3 +28,7 @@ class Session(models.Model):
         string='Course',
         required=True,
     )
+    attendee_ids = fields.Many2many(
+        comodel_name='res.partner',
+        string='Attendees',
+    )
