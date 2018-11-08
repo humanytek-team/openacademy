@@ -19,3 +19,8 @@ class Wizard(models.TransientModel):
         comodel_name='res.partner',
         string="Attendees",
     )
+
+    @api.multi
+    def subscribe(self):
+        self.session_id.attendee_ids |= self.attendee_ids
+        return {}
