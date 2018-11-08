@@ -36,7 +36,10 @@ class Course(models.Model):
             new_name = u"Copy of {} ({})".format(self.name, copied_count)
 
         default['name'] = new_name
-        return super(Course, self).copy(default)
+        new_course = super(Course, self).copy(default)
+        for session in self.session_ids:
+            session.copy().course_id = new_course
+        return new_course
 
     _sql_constraints = [
         ('name_description_check',
