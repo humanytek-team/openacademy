@@ -10,6 +10,7 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+        'reports/session.xml',
         'views/course.xml',
         'views/partner.xml',
         'views/session.xml',
